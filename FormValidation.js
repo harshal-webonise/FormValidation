@@ -1,31 +1,44 @@
-window.onload = init;
+window.onload = init();
  
 
 function init() 
 {
 
    document.getElementById("theForm").onsubmit = validateForm;
+<<<<<<< HEAD
+=======
+   document.getElementById("submit").onclick = sendData;
+>>>>>>> c607846021df3fc578ec78f8143cc15628206a8f
    document.getElementById("reset").onclick = clearDisplay;
 document.getElementById("data").onclick=sendData; 
    document.getElementById("name").focus();
 }
  
 
+<<<<<<< HEAD
 function validateForm() 
 {
+=======
+
+function validateForm() {
+>>>>>>> c607846021df3fc578ec78f8143cc15628206a8f
    return (isNotEmpty("name", "Please enter your name")
         && isNumeric("zipcode", "Please enter a 5-digit zip code!")
-        && isLengthMinMax("zipcode", "Please enter a 5-digit zip code!", 5, 5)
+        && isLengthMinMax("zipcode", "Please enter a 5-digit zip code!", 6, 6)
         && isSelected("country", "Please make a selection!")
         && isChecked("gender", "Please check a gender!")
         && isChecked("color", "Please check a color!")
         && isNumeric("phone", "Please enter a valid phone number!")
         && isValidEmail("email", "Enter a valid email!")
         && isLengthMinMax("password", "Enter a valid password!", 6, 8)
-        && verifyPassword("password", "pwVerified", "Different from the password!"));
+        && verifyPassword("password", "pwVerified", "Different from the password!")
+        && isAge("age","Age is not valid",0,100));
+
+   sendData();
 }
  
 // Retrun true if the input value is not empty
+
 function isNotEmpty(inputId, errorMsg) {
    var inputElement = document.getElementById(inputId);
    var errorElement = document.getElementById(inputId + "Error");
@@ -59,7 +72,15 @@ function showMessage(isValid, inputElement, errorMsg, errorElement) {
    }
 }
  
-
+function isAge(inputId,errorMsg,minAge,maxAge)
+{
+	var inputElement = document.getElementById(inputId);
+   var errorElement = document.getElementById(inputId + "Error");
+   var inputValue = inputElement.value.trim();
+var isValid=(inputValue>minAge && inputValue<maxAge);
+showMessage(isValid,inputElement,errorMsg,errorElement);
+return isValid;
+}
 function isNumeric(inputId, errorMsg) {
    var inputElement = document.getElementById(inputId);
    var errorElement = document.getElementById(inputId + "Error");
