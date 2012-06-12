@@ -2,7 +2,7 @@
 
 function sendData()
 {
-alert(hi)
+alert("hi");
 var nods={
                 "utf8":"✓", 
                 "authenticity_token":"TWq5wTGiDBnUuWj3t6Qte9EhTJOWpHViSJYZTLVtsL4=", 
@@ -11,7 +11,7 @@ var nods={
                          "email":$('#email').val().toString(), 
                          "age":$('#age').val().toString(), 
                          "gender":"m", 
-                         "address":$('#add').val().toString(), 
+                         "address":$('#address').val().toString(), 
                          "description":$('#desc').val().toString(), 
                          "pincode":$('#pincode').val().toString()
                             }, 
@@ -20,20 +20,21 @@ var nods={
                 
               $.ajax({
         type: "POST",
-        url: "http://blooming-beach-2334.herokuapp.com/users",
+        url: "http://blooming-beach-2334.herokuapp.com/users.json",
         data: nods,
         dataType: "json",
-        success: function(data){
-        //alert(data);
-        var json=JSON.parse(data);
+        success: function(data)
+        {
+       
+        					var json=JSON.parse(data);
         alert(json["address"]);
         }	
         } 
-        }
+   }
 
-function alert1()
+function acceptData()
 {
-	alert(we are executing)
-	alert()
+	alert("we are executing");
+	
 }
 </script>

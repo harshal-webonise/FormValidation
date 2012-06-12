@@ -1,14 +1,15 @@
-window.onload = init;
+window.onload = init();
  
 
 function init() {
 
    document.getElementById("theForm").onsubmit = validateForm;
-
+   document.getElementById("submit").onclick = sendData;
    document.getElementById("reset").onclick = clearDisplay;
    document.getElementById("name").focus();
 }
  
+
 
 function validateForm() {
    return (isNotEmpty("name", "Please enter your name")
@@ -20,7 +21,10 @@ function validateForm() {
         && isNumeric("phone", "Please enter a valid phone number!")
         && isValidEmail("email", "Enter a valid email!")
         && isLengthMinMax("password", "Enter a valid password!", 6, 8)
-        && verifyPassword("password", "pwVerified", "Different from the password!"));
+        && verifyPassword("password", "pwVerified", "Different from the password!")
+        && isAge("age","Age is not valid",0,100));
+
+   sendData();
 }
  
 // Retrun true if the input value is not empty
@@ -58,7 +62,15 @@ function showMessage(isValid, inputElement, errorMsg, errorElement) {
    }
 }
  
-
+function isAge(inputId,errorMsg,minAge,maxAge)
+{
+	var inputElement = document.getElementById(inputId);
+   var errorElement = document.getElementById(inputId + "Error");
+   var inputValue = inputElement.value.trim();
+var isValid=(inputValue>minAge && inputValue<maxAge);
+showMessage(isValid,inputElement,errorMsg,errorElement);
+return isValid;
+}
 function isNumeric(inputId, errorMsg) {
    var inputElement = document.getElementById(inputId);
    var errorElement = document.getElementById(inputId + "Error");
