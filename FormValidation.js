@@ -6,7 +6,8 @@ function init()
 
    document.getElementById("theForm").onsubmit = validateForm;
    document.getElementById("reset").onclick = clearDisplay;
-document.getElementById("data").onclick=sendData; 
+//   document.getElementById("data").onclick=sendData; 
+  sendData(); 
    document.getElementById("name").focus();
 }
  

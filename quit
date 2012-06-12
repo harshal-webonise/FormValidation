@@ -1,0 +1,27 @@
+exiMerge branch 'Develope' of github.com:harshal-webonise/FormValidation into Develope
+
+Conflicts:
+	FormValidation.html
+	FormValidation.html~
+	FormValidation.js
+	FormValidation.js~
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch Develope
+# Changes to be committed:
+#
+#	new file:   FormValidation.css~
+#	modified:   FormValidation.html
+#	modified:   FormValidation.html~
+#	modified:   FormValidation.js
+#	modified:   FormValidation.js~
+#	new file:   MethodsforRestGetPost.js
+#	new file:   MethodsforRestGetPost.js~
+#
