@@ -3,12 +3,13 @@
   <title>Test JavaScript Form Validation</title>
   <link rel="stylesheet" href="FormValidation.css">
   <script type="text/javascript" src="FormValidation.js" ></script>
+<script type="text/javascript" src="MethodsforGetPost.js" ></script>
 </head>
  
 <body>
   <h2> Form Validataion</h2>
  
-  <form id="theForm" method="get" action="getData">
+  <form id="theForm" >
     <table>
     <tr>
       <td>Name<span class="red">*</span></td>
@@ -20,7 +21,7 @@
       <td id="addressError" class="red">&nbsp;</td></tr>
     <tr>
       <td>Zip Code<span class="red">*</span></td>
-      <td><input type="text" id="zipcode" name="zipcode" /></td>
+      <td><input type="text" id="pincode" name="zipcode" /></td>
       <td id="zipcodeError" class="red">&nbsp;</td></tr>
     <tr>
       <td>Country<span class="red">*</span></td>
@@ -67,13 +68,15 @@
 	<td id="ageError" class="red">&nbsp;</td></tr>
 	   <tr>
 	<td>Descrption</td>
-	<td><textarea type="text  id ="desc" name="desc"/></textarea></td>
-	<td id="descError" class="red">&nbsp;</td> </tr>
+	<td><textarea type="text"  id ="desc" name="desc"/>&nbsp;</textarea></td>
+	<td id="descError" class="red">&nbsp;</td> 
+	</tr>
         
     <tr>
       <td>&nbsp;</td>
-      <td><input type="submit" value="SEND" id="submit"/>&nbsp;
-          <input type="reset" value="CLEAR" id="reset"/></td>
+      <td><input type="submit"  value="Submit" onclick="alert1();"  />&nbsp;
+          <input type="reset" value="Clear" id="reset"/></td>
+    
       <td>&nbsp;</td></tr>
     </table>
   </form>

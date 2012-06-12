@@ -13,48 +13,17 @@ function init() {
 function validateForm() {
    return (isNotEmpty("name", "Please enter your name")
         && isNumeric("zipcode", "Please enter a 5-digit zip code!")
-        && isLengthMinMax("zipcode", "Please enter a 5-digit zip code!", 5, 5)
+        && isLengthMinMax("zipcode", "Please enter a 5-digit zip code!", 6, 6)
         && isSelected("country", "Please make a selection!")
         && isChecked("gender", "Please check a gender!")
         && isChecked("color", "Please check a color!")
         && isNumeric("phone", "Please enter a valid phone number!")
         && isValidEmail("email", "Enter a valid email!")
         && isLengthMinMax("password", "Enter a valid password!", 6, 8)
-        && verifyPassword("password", "pwVerified", "Different from the password!")
-        && isAge(""));
+        && verifyPassword("password", "pwVerified", "Different from the password!"));
 }
  
-function get_Data()
-{
-	event.preventDefault(); 
-	
-var data1={
-                "utf8":"✓", 
-                "authenticity_token":"TWq5wTGiDBnUuWj3t6Qte9EhTJOWpHViSJYZTLVtsL4=", 
-                "user":{
-                            "name":$('#name').val().toString(), 
-                            "email":$('#email').val().toString(), 
-                            "age":$('#age').val().toString(), 
-                            "gender":"m", 
-                            "address":$('#address').val().toString(), 
-                            "description":$('#desc').val().toString(), 
-                            "pincode":$('#pin').val().toString()
-                            }, 
-                            "commit":"Create User"
-                };
-                
-                $.ajax({
-        type: "POST",
-        url: "http://blooming-beach-2334.herokuapp.com/users",
-        data: data1,
-        dataType: "json",
-        success: function(data){
-        //alert(data);
-        var json=JSON.parse(data);
-        alert(json["address"]);
-        }	
-        } 
-        }
+// Retrun true if the input value is not empty
 
 function isNotEmpty(inputId, errorMsg) {
    var inputElement = document.getElementById(inputId);

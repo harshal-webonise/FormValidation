@@ -1,0 +1,17 @@
+.red {  /* for error messages */
+   color: red;
+}
+ 
+input.error {  /* for the error input text fields */
+   border: 1px red inset;
+   padding: 2px;
+}
+ 
+table {
+   border: 0;
+}
+ 
+td {
+   margin: 0;
+   padding: 3px 10px 3px 3px;
+}
