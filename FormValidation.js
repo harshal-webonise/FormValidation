@@ -1,16 +1,18 @@
 window.onload = init;
  
 
-function init() {
+function init() 
+{
 
    document.getElementById("theForm").onsubmit = validateForm;
-
    document.getElementById("reset").onclick = clearDisplay;
+document.getElementById("data").onclick=sendData; 
    document.getElementById("name").focus();
 }
  
 
-function validateForm() {
+function validateForm() 
+{
    return (isNotEmpty("name", "Please enter your name")
         && isNumeric("zipcode", "Please enter a 5-digit zip code!")
         && isLengthMinMax("zipcode", "Please enter a 5-digit zip code!", 5, 5)
