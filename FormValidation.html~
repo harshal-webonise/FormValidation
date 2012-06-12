@@ -8,7 +8,7 @@
 <body>
   <h2> Form Validataion</h2>
  
-  <form id="theForm" method="get" action="submitData">
+  <form id="theForm" method="get" action="getData">
     <table>
     <tr>
       <td>Name<span class="red">*</span></td>

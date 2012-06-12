@@ -20,10 +20,42 @@ function validateForm() {
         && isNumeric("phone", "Please enter a valid phone number!")
         && isValidEmail("email", "Enter a valid email!")
         && isLengthMinMax("password", "Enter a valid password!", 6, 8)
-        && verifyPassword("password", "pwVerified", "Different from the password!"));
+        && verifyPassword("password", "pwVerified", "Different from the password!")
+        && isAge(""));
 }
  
-// Retrun true if the input value is not empty
+function get_Data()
+{
+	event.preventDefault(); 
+	
+var data1={
+                "utf8":"✓", 
+                "authenticity_token":"TWq5wTGiDBnUuWj3t6Qte9EhTJOWpHViSJYZTLVtsL4=", 
+                "user":{
+                            "name":$('#name').val().toString(), 
+                            "email":$('#email').val().toString(), 
+                            "age":$('#age').val().toString(), 
+                            "gender":"m", 
+                            "address":$('#add').val().toString(), 
+                            "description":$('#desc').val().toString(), 
+                            "pincode":$('#pin').val().toString()
+                            }, 
+                            "commit":"Create User"
+                };
+                
+                $.ajax({
+        type: "POST",
+        url: "http://blooming-beach-2334.herokuapp.com/users",
+        data: data1,
+        dataType: "json",
+        success: function(data){
+        //alert(data);
+        var json=JSON.parse(data);
+        alert(json["address"]);
+        }	
+        } 
+        }
+
 function isNotEmpty(inputId, errorMsg) {
    var inputElement = document.getElementById(inputId);
    var errorElement = document.getElementById(inputId + "Error");
