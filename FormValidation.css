@@ -1,14 +1,14 @@
-.red {  
+.red {  /* for error messages */
    color: red;
 }
  
-input.error {  
+input.error {  /* for the error input text fields */
    border: 1px red inset;
    padding: 2px;
 }
  
 table {
-   border: 2;
+   border: 0;
 }
  
 td {
