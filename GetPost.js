@@ -1,35 +1,60 @@
+/*This method post the data to web service in JSON format */
 function sendData()
 {
-	alert( "getpost");
+	//alert( "getpost");
 	var nods={
                 "utf8":"✓", 
                 "authenticity_token":"TWq5wTGiDBnUuWj3t6Qte9EhTJOWpHViSJYZTLVtsL4=", 
                 "user":{
-                            "name":$('#name').val().toString(), 
-                            "email":$('#email').val().toString(), 
-                            "age":$('#age').val().toString(), 
+                            "name":$('#iname').val().toString(), 
+                            "email":$('#iemail').val().toString(), 
+                            "age":$('#iage').val().toString(), 
                             "gender":$('input[name=gender]:cheked').val().toString(), 
-                            "address":$('#address').val().toString(), 
-                            "description":$('#desc').val().toString(), 
-                            "zipcode":$('#zipcode').val().toString()
+                            "address":$('#iaddress').val().toString(), 
+                            "description":$('#idesc').val().toString(), 
+                            "zipcode":$('#izipcode').val().toString()
                             }, 
                             "commit":"Create User"
                 };
                 
-$.ajax({
+/*$.ajax({
         type: "POST",
         url: "http://blooming-beach-2334.herokuapp.com/users",
         data: nods,
         dataType: "json",
-        success: function(data){
+success:alert("Success"),
+       
+        //success: function(data){
         //alert(data);
-        var json=JSON.parse(data);
-        alert(json["address"]);
-        }
-        }
+        //var json=JSON.parse(data);
+//        alert(json["address"]);}
+        })
      }
-        
-    /*    
-$.post('ajax/http://blooming-beach-2334.herokuapp.com/users', function(data) {
-  $('.result').html(data);
-});*/
+  */ 
+  
+  
+  alert(data1);        
+                  $.ajax({
+                  type: "POST",
+                  url: "http://blooming-beach-2334.herokuapp.com/users",
+                  data: data1,
+                  dataType: "json",
+                  success: alert("success \n"),
+                                                })     
+ 
+ 
+ /*this method retrive data from web services*/  
+ 
+     
+$.getJSON('http://blooming-beach-2334.herokuapp.com/users', function(data) {
+  var items = [];
+
+  $.each(data, function(key, val) {
+    items.push('<li id="' + key + '">' + val + '</li>');
+  });
+
+  $('<ul/>', {
+    'class': 'my-new-list',
+    html: items.join('')
+  }).appendTo('body');
+});

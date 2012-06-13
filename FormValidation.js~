@@ -3,19 +3,19 @@ window.onload = init;
 
 function init() 
 {
-
+alert("hi");
    document.getElementById("theForm").onsubmit = validateForm;
    document.getElementById("reset").onclick = clearDisplay;
 //   document.getElementById("data").onclick=sendData; 
-  sendData(); 
-   document.getElementById("name").focus();
+ // document.getElementById() sendData(); 
+   document.getElementById("iname").focus();
 }
  
 
 function validateForm() 
 {
    return (isNotEmpty("name", "Please enter your name")
-        && isNumeric("zipcode", "Please enter a 5-digit zip code!")
+        && isNumeric("zipcode", "Please enter a 6-digit zip code!")
         && isLengthMinMax("zipcode", "Please enter a 6-digit zip code!", 6, 6)
         && isSelected("country", "Please make a selection!")
         && isChecked("gender", "Please check a gender!")
@@ -143,8 +143,8 @@ function isChecked(inputName, errorMsg) {
 // The verified password in id "verifiedPwId".
 function verifyPassword(pwId, verifiedPwId, errorMsg) {
    var pwElement = document.getElementById(pwId);
-   var verifiedPwElement = document.getElementById(verifiedPwId);
-   var errorElement = document.getElementById(verifiedPwId + "Error");
+   var verifiedPwElement = document.getElementById(iverifiedPwId);
+   var errorElement = document.getElementById(iverifiedPwId + "Error");
    var isTheSame = (pwElement.value == verifiedPwElement.value);
    showMessage(isTheSame, verifiedPwElement, errorMsg, errorElement);
    return isTheSame;
@@ -162,5 +162,5 @@ function clearDisplay() {
       }
    }
    // Set initial focus
-   document.getElementById("name").focus();
+   document.getElementById("iname").focus();
 }

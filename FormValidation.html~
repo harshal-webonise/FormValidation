@@ -2,9 +2,9 @@
 <head>
   <title>Test JavaScript Form Validation</title>
   <link rel="stylesheet" href="FormValidation.css">
+   <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
   <script type="text/javascript" src="FormValidation.js" ></script>
-<script type="text/javascript" language="javascript"
-src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="GetPost.js" ></script>
 </head>
  
 <body>
@@ -14,19 +14,19 @@ src="js/jquery-1.7.2.min.js"></script>
     <table>
     <tr>
       <td>Name<span class="red">*</span></td>
-      <td><input type="text" id="name" name="name"/></td>
+      <td><input type="text" id="iname" name="name"/></td>
       <td id="nameError" class="red">&nbsp;</td></tr>
     <tr>
       <td>Address</td>
-      <td><input type="text" id="address" name="address" /></td>
+      <td><input type="text" id="iaddress" name="address" /></td>
       <td id="addressError" class="red">&nbsp;</td></tr>
     <tr>
       <td>Zip Code<span class="red">*</span></td>
-      <td><input type="text" id="zipcode" name="zipcode" /></td>
+      <td><input type="text" id="izipcode" name="zipcode" /></td>
       <td id="zipcodeError" class="red">&nbsp;</td></tr>
     <tr>
       <td>Country<span class="red">*</span></td>
-      <td><select id="country" name="country">
+      <td><select id="icountry" name="country">
             <option value="" selected>Please select...</option>
             <option value="India">India</option>
             <option value="United States">United States</option>
@@ -49,34 +49,33 @@ src="js/jquery-1.7.2.min.js"></script>
       <td id="colorError" class="red">&nbsp;</td></tr>
     <tr>
       <td>Phone<span class="red">*</span></td>
-      <td><input type="text" id="phone" name="phone" /></td>
+      <td><input type="text" id="iphone" name="phone" /></td>
       <td id="phoneError" class="red">&nbsp;</td></tr>
     <tr>
       <td>Email<span class="red">*</span></td>
-      <td><input type="text" id="email" name="email" /></td>
+      <td><input type="text" id="iemail" name="email" /></td>
       <td id="emailError" class="red">&nbsp;</td></tr>
     <tr>
       <td>password (6-8 characters)<span class="red">*</span></td>
-      <td><input type="password" id="password" name="password" /></td>
+      <td><input type="password" id="ipassword" name="password" /></td>
       <td id="passwordError" class="red">&nbsp;</td></tr>
     <tr>
       <td>Verify password<span class="red">*</span></td>
-      <td><input type="password" id="pwVerified" name="pwVerified" /></td>
+      <td><input type="password" id="ipwVerified" name="pwVerified" /></td>
       <td id="pwVerifiedError" class="red">&nbsp;</td></tr>
 	<tr>
 	<td>Age<span class="red">*</span></td>
-	<td><input type="text" id ="age" name="age"/></td>
+	<td><input type="text" id ="iage" name="age"/></td>
 	<td id="ageError" class="red">&nbsp;</td></tr>
-	   <script type="text/javascript" language="javascript"
-src="js/jquery-1.7.2.min.js"></script><tr>
+	   <tr>
 	<td>Descrption</td>
-	<td><textarea type="text"  id ="desc" name="desc"/></textarea></td>
+	<td><textarea type="text"  id ="idesc" name="desc"/></textarea></td>
 	<td id="descError" class="red">&nbsp;</td> 
 	</tr>
         
     <tr>
       <td>&nbsp;</td>
-      <td><input type="submit" value="SEND" />&nbsp;
+      <td><input type="submit" value="SEND" onclick="sendData();" />&nbsp;
           <input type="reset" value="CLEAR" id="reset"/></td>
       <td>&nbsp;</td></tr>
     </table>
