@@ -1,6 +1,7 @@
 /*This method post the data to web service in JSON format */
 function sendData()
 {
+	console.log(" i am in sendata");
 	//alert( "getpost");
 	var nods={
                 "utf8":"✓", 
@@ -33,14 +34,14 @@ success:alert("Success"),
   */ 
   
   
-  alert(data1);        
+ // alert(data1);        
                   $.ajax({
                   type: "POST",
                   url: "http://blooming-beach-2334.herokuapp.com/users",
                   data: data1,
                   dataType: "json",
                   success: alert("success \n"),
-                                                })     
+                                                });     
  
  
  /*this method retrive data from web services*/  
@@ -58,3 +59,4 @@ $.getJSON('http://blooming-beach-2334.herokuapp.com/users', function(data) {
     html: items.join('')
   }).appendTo('body');
 });
+}
