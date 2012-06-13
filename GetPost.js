@@ -1,6 +1,6 @@
 function sendData()
 {
-	
+	alert( "getpost");
 	var nods={
                 "utf8":"✓", 
                 "authenticity_token":"TWq5wTGiDBnUuWj3t6Qte9EhTJOWpHViSJYZTLVtsL4=", 
@@ -8,10 +8,10 @@ function sendData()
                             "name":$('#name').val().toString(), 
                             "email":$('#email').val().toString(), 
                             "age":$('#age').val().toString(), 
-                            "gender":"m", 
+                            "gender":$('input[name=gender]:cheked').val().toString(), 
                             "address":$('#address').val().toString(), 
                             "description":$('#desc').val().toString(), 
-                            "pincode":$('#pin').val().toString()
+                            "zipcode":$('#zipcode').val().toString()
                             }, 
                             "commit":"Create User"
                 };
@@ -29,3 +29,7 @@ $.ajax({
         }
      }
         
+    /*    
+$.post('ajax/http://blooming-beach-2334.herokuapp.com/users', function(data) {
+  $('.result').html(data);
+});*/

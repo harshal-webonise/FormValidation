@@ -16,7 +16,7 @@ function validateForm()
 {
    return (isNotEmpty("name", "Please enter your name")
         && isNumeric("zipcode", "Please enter a 5-digit zip code!")
-        && isLengthMinMax("zipcode", "Please enter a 5-digit zip code!", 5, 5)
+        && isLengthMinMax("zipcode", "Please enter a 6-digit zip code!", 6, 6)
         && isSelected("country", "Please make a selection!")
         && isChecked("gender", "Please check a gender!")
         && isChecked("color", "Please check a color!")
